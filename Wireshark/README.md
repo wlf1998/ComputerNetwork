@@ -69,3 +69,39 @@ dns.qry.name == github.com
 
 考虑到其他内容的话，是相关网页的域名的解析。
 
+### 3. https握手
+
+#### reference
+
+[关于https 和 ssl握手的理解](https://blog.csdn.net/nyyjs/article/details/72832896)
+
+[从wireshark抓包看百度的https流程](https://blog.csdn.net/u010536377/article/details/78989931)
+
+#### 截图
+
+使用的过滤条件
+
+```
+ssl && ip.addr==192.30.253.112 
+```
+
+![1539161351235](README/1539161351235.png)
+
+#### 握手
+
+图中是出现了两个同样的握手，下面给出第一次的图解
+
+```
+-->164 Client Hello 
+<--177 Server Hello, Change Cipher Spec, Encrypted Handshake Message
+-->181 Change Cipher Spec, Encrypted Handshake Message
+-->183	Application Data
+<--208	Application Data
+```
+
+
+
+
+
+
+
