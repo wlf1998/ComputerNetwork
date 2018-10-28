@@ -17,7 +17,7 @@ def send_request(data):
     global cur
     ret=rev.sendto(data,(ip[cur],53))
     cur=(cur+1)%len(ip)
- 
+	
 class Cache:
     def __init__(self):
         self.c={}
