@@ -69,6 +69,8 @@ dns.qry.name == github.com
 
 考虑到其他内容的话，是相关网页的域名的解析。
 
+也有可能是timeout. 也有可能是同时一开始同时遇到多个需要query的内容，依次触发，而首次的query还没有完成。
+
 ### 3. https握手
 
 #### reference
@@ -100,6 +102,12 @@ ssl && ip.addr==192.30.253.112
 ```
 
 
+
+```sequence
+Client-->Server : <164> Client Hello
+Server-->Client : <177> Server Hello, Change Cipher Spec, Encrypted Handshake Message
+Client-->Server : <181> Change Cipher Spec, Encrypted Handshake Message
+```
 
 
 
